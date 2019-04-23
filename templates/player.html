@@ -1,0 +1,44 @@
+<!DOCTYPE html> 
+<html> 
+  <head>
+    <link rel="stylesheet" href="/static/css/player.css">
+  </head>
+<body onload="getFrameRate()"> 
+<div id="videoSelect">
+        <h2>Select how you want to submit your video</h2>
+        <input id="urlRadio" type="radio" name="gender" value="url" checked onclick="toggleVideoInput()">Video URL
+        <input id="fileRadio" type="radio" name="gender" value="file" onclick="toggleVideoInput()">Video File<br>
+
+        <input id="urlInput" type="text" placeholder="Video URL" />
+        <input id="fileInput" class="hide" value="Upload Video" type="file" accept="video/*" id="videoInput"/>
+
+      <input type="submit" onclick="handleSubmit(event)" />
+</div>
+<div class="players">
+    <div>
+          <h3>Original Video</h3>
+          <video id="myVideo1" width="320" height="176" controls>
+              <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+              <source src="mov_bbb.ogg" type="video/ogg">
+              Your browser does not support HTML5 video.
+          </video>
+    </div>
+    <!-- <div class="loader"></div> -->
+    <div>
+        <h3>Frame By Frame</h3>
+        <!-- <button onclick="setPlaySpeed2()" type="button">Set video to play in frame-by-frame</button><br>  -->
+        <video id="myVideo2" width="320" height="176" controls onloadstart="setPlaySpeed2()">
+          <source src="/static/mov_bbb.mp4" type="video/mp4">
+          <source src="mov_bbb.ogg" type="video/ogg">
+          Your browser does not support HTML5 video.
+        </video>
+    </div>
+    
+</div>
+
+
+
+
+<script src="/static/js/main.js"></script> 
+</body> 
+</html>
